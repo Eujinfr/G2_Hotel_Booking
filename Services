@@ -163,7 +163,77 @@ int main()
             // =========================
             // EXIT
             // =========================
-            case 4:
+             
+// =========================
+// CUSTOMER SERVICE
+// =========================
+case 4:
+{
+    int serviceChoice;
+
+    cout << "\n\n******** CUSTOMER SERVICE ********";
+    cout << "\n1. Ask a Question";
+    cout << "\n2. Make a Complaint";
+    cout << "\n3. Request Assistance";
+    cout << "\n4. Report a Room Problem";
+    cout << "\n5. Billing Concern";
+    cout << "\n6. Lost and Found";
+    cout << "\n7. Request Room Service";
+    cout << "\n8. General Inquiry";
+
+    cout << "\n\nChoose an option: ";
+    cin >> serviceChoice;
+
+    switch (serviceChoice)
+    {
+        case 1:
+            cout << "\nYour question has been submitted.";
+            cout << "\nA customer service representative will assist you.";
+            break;
+
+        case 2:
+            cout << "\nYour complaint has been recorded.";
+            cout << "\nWe apologize for any inconvenience.";
+            break;
+
+        case 3:
+            cout << "\nAssistance request submitted.";
+            cout << "\nA staff member will assist you shortly.";
+            break;
+
+        case 4:
+            cout << "\nRoom problem report submitted.";
+            cout << "\nOur maintenance staff will check your room.";
+            break;
+
+        case 5:
+            cout << "\nBilling concern submitted.";
+            cout << "\nPlease present your receipt or booking information.";
+            break;
+
+        case 6:
+            cout << "\nLost and Found request submitted.";
+            cout << "\nPlease provide the item description to our staff.";
+            break;
+
+        case 7:
+            cout << "\nRoom service request submitted.";
+            cout << "\nOur staff will attend to your request shortly.";
+            break;
+
+        case 8:
+            cout << "\nThank you for contacting Brandons' Oasis.";
+            cout << "\nFor general inquiries, please approach the front desk.";
+            break;
+
+        default:
+            cout << "\nInvalid customer service option!";
+    }
+
+    break;
+}
+
+            case 5:
                 cout << "\nThank you for using our service!";
                 break;
 
