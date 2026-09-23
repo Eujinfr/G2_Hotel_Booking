@@ -10,7 +10,9 @@ int main()
     do
     {
 
-                                                                                               
+            // =========================
+            // Options user interface
+            // =========================                                                                                 
         cout << "\n             Welcome to";     
         cout << "\n          Brandons' Oasis";
 
@@ -20,7 +22,7 @@ int main()
         cout << "\n1. ROOM BOOKING (IN PROGRESS)";
         cout << "\n2. ROOM CLEANING (IN PROGRESS)";
         cout << "\n3. PAYMENT SYSTEM (PLACEHOLDER)";
-        cout << "\n4. CUSTOMER SERVICE (PLACEHOLDER)";
+        cout << "\n4. CUSTOMER SERVICE (IN PROGRESS)";
         cout << "\n5. EXIT";
 
         cout << "\n\nEnter Category(1-5): ";
