@@ -20,9 +20,10 @@ int main()
         cout << "\n1. ROOM BOOKING (IN PROGRESS)";
         cout << "\n2. ROOM CLEANING (IN PROGRESS)";
         cout << "\n3. PAYMENT SYSTEM (PLACEHOLDER)";
-        cout << "\n4. EXIT";
+        cout << "\n4. CUSTOMER SERVICE (PLACEHOLDER)";
+        cout << "\n5. EXIT";
 
-        cout << "\n\nEnter Category(1-4): ";
+        cout << "\n\nEnter Category(1-5): ";
         cin >> category;
 
         switch (category)
