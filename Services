@@ -37,9 +37,9 @@ int main()
                 cout << "\n\n******** ROOM BOOKING ********";
                  cout << "\nALL THE ROOMS HAVE A LIMIT OF 5"; 
                  cout << endl; 
-                cout << "\n1. Standard Room - P1299 (2 PAX)";
-                cout << "\n2. Deluxe Room - P2499 (6 PAX)";
-                cout << "\n3. Suite Room - P3350 (8 PAX)";
+                cout << "\n1. Standard Room - ₱1299 (2 PAX)";
+                cout << "\n2. Deluxe Room - ₱2499 (6 PAX)";
+                cout << "\n3. Suite Room - ₱3350 (8 PAX)";
                 cout << "\n4. Back to Main Menu";
                 cout << "\n\nEnter Room Type (1-4): ";
                 cin >> choice;
@@ -130,7 +130,7 @@ int main()
             // ROOM CLEANING
             case 2:
                 cout << "\n\n******** ROOM CLEANING ********";
-                cout << "\nCleaning Service Fee: P330";
+                cout << "\nCleaning Service Fee: ₱330";
                 cout << "\n!! This will add an additional fee !!";
                 cout << "\n\n1. Add Cleaning Service";
                 cout << "\n2. Back to Main Menu";
@@ -155,7 +155,7 @@ int main()
             // PAYMENT SYSTEM
             case 3:
                 cout << "\n\n******** PAYMENT SYSTEM ********";
-                cout << "\nCurrent Total: P" << total;
+                cout << "\nCurrent Total: ₱" << total;
 
                 if (total > 0)
                 {
@@ -214,7 +214,7 @@ int main()
             case 5:
                 cout << "\n\n***************************************";
                 cout << "\n Thank you for visiting Brandons' Oasis!";
-                cout << "\n Final Total: P" << total;
+                cout << "\n Final Total: ₱" << total;
                 cout << "\n Goodbye!";
                 cout << "\n***************************************";
                 running = false;
@@ -227,7 +227,7 @@ int main()
         if (running && category != 4)
         {
             cout << "\n\n***************************************";
-            cout << "\nCURRENT TOTAL: P" << total;
+            cout << "\nCURRENT TOTAL: ₱" << total;
             cout << "\n***************************************";
         }
     }
