@@ -35,7 +35,8 @@ int main()
                 int capacity;
 
                 cout << "\n\n******** ROOM BOOKING ********";
-                 cout << "\nALL THE ROOMS HAVE A LIMIT OF 5"; 
+                 cout << "\nNote: ROOM BOOKING HAS A LIMIT OF FIVE "; 
+                 
                  cout << endl; 
                 cout << "\n1. Standard Room - ₱1299 (2 PAX)";
                 cout << "\n2. Deluxe Room - ₱2499 (6 PAX)";
@@ -69,8 +70,7 @@ int main()
                     cout << "\nInvalid room choice!";
                     break;
                 }
-
-                cout << "\nEnter Number of Rooms: ";
+                cout << "\nHow many rooms will you book? (1-5): ";
                 cin >> quantity;
 
                 if (quantity <= 0)
@@ -85,7 +85,7 @@ int main()
                 }
                 else
                 {
-                    cout << "Enter Total Number of People: ";
+                    cout << "How many people will use the rooms? ";
                     cin >> people;
 
                     int maxPeople = quantity * capacity;
