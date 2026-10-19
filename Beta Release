@@ -4,9 +4,8 @@ using namespace std;
 
 int main()
 {
-    int category, choice, quantity, people, price = 0;
-    int total = 0;
-    string concern;
+    int category, choice, quantity, people, price = 0,  total = 0;;
+    string concern, name, opay, card, cnum;
     bool running = true;
 
     const int maxRooms = 5;
@@ -33,22 +32,20 @@ int main()
             case 1:
             {
                 int capacity;
+                int roomType;
+                int discount = 0;
 
-                cout << "\n\n******** ROOM BOOKING ********";
-                 cout << "\nNote: ROOM BOOKING HAS A LIMIT OF FIVE "; 
-                 
-                 cout << endl; 
-                cout << "\n1. Standard Room - ₱1299 (2 PAX)";
-                cout << "\n2. Deluxe Room - ₱2499 (6 PAX)";
-                cout << "\n3. Suite Room - ₱3350 (8 PAX)";
+                cout << "\n\n******** ROOM BOOKING ****";
+                cout << "\nNote: ROOM BOOKING HAS A LIMIT OF FIVE";
+
+                cout << "\n\n1. Standard Room - P1299 (2 PAX)";
+                cout << "\n2. Deluxe Room - P2499 (6 PAX)";
+                cout << "\n3. Suite Room - P3350 (8 PAX)";
                 cout << "\n4. Back to Main Menu";
                 cout << "\n\nEnter Room Type (1-4): ";
                 cin >> choice;
 
-                if (choice == 4)
-
-                
-                    break;
+               
 
                 if (choice == 1)
                 {
@@ -65,11 +62,16 @@ int main()
                     price = 3350;
                     capacity = 8;
                 }
-                else
-                {
+                else if (choice == 4)
+                    break;
+                
+                else {
                     cout << "\nInvalid room choice!";
                     break;
                 }
+
+                roomType = choice;
+
                 cout << "\nHow many rooms will you book? (1-5): ";
                 cin >> quantity;
 
@@ -85,7 +87,7 @@ int main()
                 }
                 else
                 {
-                    cout << "How many people will use the rooms? ";
+                    cout << "\nHow many people will use the rooms? ";
                     cin >> people;
 
                     int maxPeople = quantity * capacity;
@@ -105,14 +107,34 @@ int main()
                     {
                         int cost = price * quantity;
 
-                        total += cost;
-
-                        cout << "\nRoom booking successful!";
-                        cout << "\nRoom Type: ";
+                        cout << "\n\nAre there any guests eligible "
+                             << "for a discount?";
+                        cout << "\n1. Yes (Senior Citizen / PWD)";
+                        cout << "\n2. No";
+                        cout << "\nChoose: ";
+                        cin >> choice;
 
                         if (choice == 1)
+                        {
+                            // Sample 20% discount
+                            // applied to the entire booking cost
+                            discount = cost * 20 / 100;
+                        }
+                        else if (choice != 2)
+                        {
+                            cout << "\nInvalid discount choice!";
+                            break;
+                        }
+
+                        double finalCost = cost - discount;
+                        total += finalCost;
+
+                        cout << "\n\nRoom booking successful!";
+                        cout << "\nRoom Type: ";
+
+                        if (roomType == 1)
                             cout << "Standard Room";
-                        else if (choice == 2)
+                        else if (roomType == 2)
                             cout << "Deluxe Room";
                         else
                             cout << "Suite Room";
@@ -121,7 +143,11 @@ int main()
                         cout << "\nTotal People: " << people;
                         cout << "\nMaximum Capacity: "
                              << maxPeople << " people";
-                        cout << "\nBooking Cost: P" << cost;
+                        cout << "\nOriginal Booking Cost: P" << cost;
+                        cout << "\nDiscount: P" << discount;
+                        cout << "\nFinal Booking Cost: P"
+                             << finalCost;
+                        cout << "\nCurrent Total: P" << total;
                     }
                 }
                 break;
@@ -129,8 +155,8 @@ int main()
 
             // ROOM CLEANING
             case 2:
-                cout << "\n\n******** ROOM CLEANING ********";
-                cout << "\nCleaning Service Fee: ₱330";
+                cout << "\n\n******** ROOM CLEANING ****";
+                cout << "\nCleaning Service Fee: P330";
                 cout << "\n!! This will add an additional fee !!";
                 cout << "\n\n1. Add Cleaning Service";
                 cout << "\n2. Back to Main Menu";
@@ -141,6 +167,8 @@ int main()
                 {
                     total += 330;
                     cout << "\nCleaning service added!";
+                    cout << "\nAdditional Fee: P330";
+                    cout << "\nCurrent Total: P" << total;
                 }
                 else if (choice == 2)
                 {
@@ -154,8 +182,8 @@ int main()
 
             // PAYMENT SYSTEM
             case 3:
-                cout << "\n\n******** PAYMENT SYSTEM ********";
-                cout << "\nCurrent Total: ₱" << total;
+                cout << "\n\n******** PAYMENT SYSTEM ****";
+                cout << "\nCurrent Total: P" << total;
 
                 if (total > 0)
                 {
@@ -165,9 +193,39 @@ int main()
                     cout << "\n\nChoose Payment Method: ";
                     cin >> choice;
 
-                    if (choice >= 1 && choice <= 3)
+                    if (choice == 1)
                     {
-                        cout << "\nPayment method selected!";
+                        cout << "\nCash payment method selected!";
+                        cout << "\nAmount to Pay: P" << total;
+                    }
+                    else if (choice == 2)
+                    {
+                        cin.ignore(1000, '\n');
+
+                        cout << "\nName: ";
+                        getline(cin, name);
+
+                        cout << "\nCard Type (Credit/Debit): ";
+                        getline(cin, card);
+
+                        cout << "\nCard Number: ";
+                        getline(cin, cnum);
+
+                        cout << "\nCard payment method selected!";
+                        cout << "\nName: " << name;
+                        cout << "\nCard Type: " << card;
+                        cout << "\nAmount to Pay: P" << total;
+                    }
+                    else if (choice == 3)
+                    {
+                        cin.ignore(1000, '\n');
+
+                        cout << "\nEnter Online Payment Method: ";
+                        getline(cin, opay);
+     
+                        cout << "\nOnline payment method selected!";
+                        cout << "\nPayment Method: " << opay;
+                        cout << "\nAmount to Pay: P" << total;
                     }
                     else
                     {
@@ -182,7 +240,7 @@ int main()
 
             // CUSTOMER SERVICE
             case 4:
-                cout << "\n\n******** CUSTOMER SERVICE ********";
+                cout << "\n\n******** CUSTOMER SERVICE ****";
                 cout << "\n1. Ask a Question";
                 cout << "\n2. Make a Complaint";
                 cout << "\n3. Request Assistance";
@@ -194,7 +252,7 @@ int main()
                 cout << "\n\nChoose an option: ";
                 cin >> choice;
 
-                if (choice >= 1 && choice <= 8)
+                if (choice >= 1 && choice <= 8 )
                 {
                     cin.ignore(1000, '\n');
 
@@ -214,7 +272,6 @@ int main()
             case 5:
                 cout << "\n\n***************************************";
                 cout << "\n Thank you for visiting Brandons' Oasis!";
-                cout << "\n Final Total: ₱" << total;
                 cout << "\n Goodbye!";
                 cout << "\n***************************************";
                 running = false;
@@ -223,14 +280,14 @@ int main()
             default:
                 cout << "\nInvalid category! Please choose 1-5.";
         }
-
-        if (running && category != 4)
-        {
-            cout << "\n\n***************************************";
-            cout << "\nCURRENT TOTAL: ₱" << total;
-            cout << "\n***************************************";
-        }
     }
+
+    // FINAL TOTAL AT THE END OF THE PROGRAM
+    cout << "\n\n***************************************";
+    cout << "\n              FINAL TOTAL";
+    cout << "\n***************************************";
+    cout << "\nTotal Amount: P" << total;
+    cout << "\n***************************************";
 
     return 0;
 }
