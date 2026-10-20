@@ -46,7 +46,7 @@ int main()
                 cout << "\n2. Deluxe Room - P2499 (6 PAX)";
                 cout << "\n3. Suite Room - P3350 (8 PAX)";
                 cout << "\n4. Back to Main Menu";
-                cout << "\n\nEnter Room Type (1-4): ";
+                cout << "\n\nEnter Option (1-4): ";
                 cin >> choice;
 
                
