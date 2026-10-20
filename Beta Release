@@ -1,10 +1,14 @@
 #include <iostream>
 #include <string>
+#include <iomanip>   // added for decimal formatting
 using namespace std;
 
 int main()
 {
-    int category, choice, quantity, people, price = 0,  total = 0;;
+    cout << fixed << setprecision(2);   // added: show 2 decimal places
+
+    int category, choice, quantity, people, price = 0;
+    double total = 0;                   // changed: total is now a decimal
     string concern, name, opay, card, cnum;
     bool running = true;
 
@@ -33,7 +37,7 @@ int main()
             {
                 int capacity;
                 int roomType;
-                int discount = 0;
+                double discount = 0;    // changed: decimal
 
                 cout << "\n\n******** ROOM BOOKING ****";
                 cout << "\nNote: ROOM BOOKING HAS A LIMIT OF FIVE";
@@ -105,7 +109,7 @@ int main()
                     }
                     else
                     {
-                        int cost = price * quantity;
+                        double cost = price * quantity;   // changed: decimal
 
                         cout << "\n\nAre there any guests eligible "
                              << "for a discount?";
